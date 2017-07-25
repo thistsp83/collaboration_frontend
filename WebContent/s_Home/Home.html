@@ -1,0 +1,28 @@
+<html>
+<head>
+<title>home</title>
+<style>
+.left
+{
+float:left;
+}
+.right{
+float:right;
+}
+</style>
+<body>
+<div ng-controller="HomeController as ctrl">
+	<div ng-hide="currentUser==''">
+		<div class="left">
+	<h4>Welcome:{{currentUser.username}}</h4>
+		</div>
+		
+	<div class="right">	
+	<h4>You Logged In As:{{currentUser.role}}</h4>
+		</div>
+		</div>
+		
+	</div>
+	</body>
+	</html>
+	

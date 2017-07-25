@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+
+
+<link rel="stylesheet" href="../resources/css/bootstrap.min.css" />
+<script src="../resources/js/bootstrap.min.js"></script>
+
+</head>
+<body ng-app="myApp">
+	<div class="container" ng-controller="UserProfileController as ctrl" style="top: 30%;">
+		<br/><br/><br/>
+		<form class="form-horizontal" name="myForm" role="form" ng-submit="ctrl.submit()">
+			<div class="form-group" ng-class="{'has-error': form.fstname.$dirty && form.fstname.$error.required}">
+				<label for="fstname" class="col-sm-3 control-label" style="text-align: right;">First Name:</label>
+				<div class="col-sm-6">
+					<input type="text" name="fstname" id="fstname" class="form-control" placeholder="First name"
+						ng-model="ctrl.user.fstname" required />
+						<span ng-show="form.fstname.$dirty && form.fstname.$error.required" class="help-block"></span>
+				</div>
+			</div>
+			<div class="form-group" ng-class="{'has-error': form.midname.$dirty && form.midname.$error.required}">
+				<label for="midname" class="col-sm-3 control-label" style="text-align: right;">Middle Name:</label>
+				<div class="col-sm-6">
+					<input type="text" name="midname" id="midname" class="form-control" ng-model="ctrl.user.midname" required 
+						placeholder="Middle name"/>
+					<span ng-show="form.midname.$dirty && form.midname.$error.required" class="help-block"></span>
+				</div>
+			</div>
+			<div class="form-group" ng-class="{'has-error': form.lstname.$dirty && form.lstname.$error.required}">
+				<label for="lstname" class="col-sm-3 control-label" style="text-align: right;">Last Name:</label> 
+				<div class="col-sm-6">
+					<input type="text" name="lstname" id="lstname" class="form-control" ng-model="ctrl.user.lstname" required 
+						placeholder="Last name"/>
+					<span ng-show="form.lstname.$dirty && form.lstname.$error.required" class="help-block"></span>
+				</div>
+			</div>
+			<div class="form-group" ng-class="{'has-error': form.city.$dirty && form.city.$error.required}">
+				<label for="city" class="col-sm-3 control-label" style="text-align: right;">City/Town:</label> 
+				<div class="col-sm-6">
+					<input type="text" name="city" id="city" class="form-control" ng-model="ctrl.user.city" required 
+						placeholder="City/Town"/>
+					<span ng-show="form.city.$dirty && form.city.$error.required" class="help-block"></span>
+				</div>
+			</div>
+			<div class="form-group" ng-class="{'has-error': form.mobileno.$dirty && form.mobileno.$error.required}">
+				<label for="mobileno" class="col-sm-3 control-label" style="text-align: right;">mobileno :</label> 
+				<div class="col-sm-6">
+					<input type="text" name="mobileno" id="mobileno" class="form-control" ng-model="ctrl.user.mobileno" required 
+						placeholder="mobileno number"/>
+					<span ng-show="form.mobileno.$dirty && form.mobileno.$error.required" class="help-block"></span>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="dateofbirth" class="col-sm-3 control-label" style="text-align: right;">Birthdate :</label> 
+				<div class="col-sm-3">
+					<input type="date" name="dateofbirth" id="dateofbirth" class="form-control" ng-model="ctrl.user.dateofbirth" required />
+				</div>
+				<div class="col-sm-6">
+					<label for="gender" style="text-align: right;">Gender :</label>
+					<label  class="radio-inline">
+                    	<input type="radio" name="gender" value="Male" ng-model="ctrl.user.gender" checked="checked">Male
+                    </label>
+					<label  class="radio-inline">
+                    	<input type="radio" name="gender" value="Female" ng-model="ctrl.user.gender">Female
+                    </label>
+                   </div>
+			</div>
+			<div class="form-group">
+				<label for="useridentity" class="col-sm-3 control-label" style="text-align: right;">Registered as :</label> 
+				<div class="col-sm-6">
+					<label  class="radio-inline">
+                    	<input type="radio" name="useridentity" value="Student" ng-model="ctrl.user.useridentity" checked="checked">Student
+                    </label>
+					<label  class="radio-inline">
+                    	<input type="radio" name="useridentity" value="Admin" ng-model="ctrl.user.useridentity">Alumini
+                    </label>
+					<label  class="radio-inline">
+                    	<input type="radio" name="useridentity" value="Extermal" ng-model="ctrl.user.useridentity">External
+                    </label>
+                </div>
+			</div>			
+			<div class="form-group" ng-class="{'has-error': form.useremail.$dirty && form.useremail.$error.required}">
+				<label for="useremail" class="col-sm-3 control-label" style="text-align: right;">User name:</label> 
+				<div class="col-sm-6">
+					<input type="email" name="useremail" id="useremail" class="form-control" ng-model="ctrl.user.useremail" required 
+						placeholder="Email ID"/>
+					<span ng-show="form.useremail.$dirty && form.useremail.$error.required" class="help-block"></span>
+				</div>
+			</div>
+			<div class="form-group" ng-class="{'has-error': form.password.$dirty && form.password.$error.required}">
+				<label for="password" class="col-sm-3 control-label" style="text-align: right;">Password:</label> 
+				<div class="col-sm-6">
+					<input type="password" name="password" id="password" class="form-control" ng-model="ctrl.user.password" required 
+						placeholder="Password"/>
+					<span ng-show="form.password.$dirty && form.password.$error.required" class="help-block"></span>
+				</div>
+			</div>
+			<div class="form-group" ng-class="{'has-error': form.avtar.$dirty && form.avtar.$error.required}">
+				<label for="avtar" class="col-sm-3 control-label" style="text-align: right;">Upload Image:</label> 
+				<div class="col-sm-6">
+					<input type="file" name="avtar" id="avtar" class="form-control" ng-model="ctrl.user.avtar" required/> 
+					<span ng-show="form.avtar.$dirty && form.avtar.$error.required" class="help-block"></span>
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="col-sm-3"></div>
+				<div class="col-sm-6">
+					<button type="submit" ng-disabled="form$invalid || ctrl.dataLoading" class="btn btn-info">Create me?</button>
+					<button type="reset" class="btn btn-danger" ng-click="ctrl.reset()" >Clear</button>
+				</div>
+			</div>
+		</form>
+	</div>
+</body>
+</html>

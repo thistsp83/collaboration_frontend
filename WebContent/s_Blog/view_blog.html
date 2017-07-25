@@ -1,0 +1,98 @@
+<html>
+<head>
+<title>blog</title>
+</head>
+<body>
+<!-- <div class="container" ng-controller="BlogController as ctrl">
+
+	<p>
+	<p>
+	<p>
+	<p>
+	
+	<p>
+	<p>
+	<p>
+	<p>
+	
+	<div class="form-group has-feedback"></div>
+
+  Search
+
+  <p><input type="text" ng-model="search_text"></p>
+
+
+	<div ng-repeat="blog in ctrl.blogs| filter: search_text">
+
+		<fieldset>
+			<legend></legend>
+			
+			<p>Title: {{blog.title}}  
+
+			<p>ID: {{blog.id}} &nbsp; &nbsp;&nbsp; Name: {{blog.userid}}
+			    &nbsp; &nbsp;&nbsp;   <button type="button"  <!-- ng-click="ctrl.sendFriendRequest(Userdetails.userid)" 
+			       class="btn btn-warning btn-sm">Send Friend Request</button>
+			  </p>
+
+			<p>Description: {{blog.description}}</p> &nbsp; &nbsp;&nbsp;<p>Posted: {{blog.posted_dt}}</p>
+
+			<p> Address:{{Userdetails.address}} &nbsp; &nbsp;&nbsp;<p> Role :{{Userdetails.role}}</p>
+ 	</fieldset>
+	</div> -->
+
+ <!-- Blog Post Content Column -->
+ <!-- Page Content -->
+    <div class="container" ng-controller="BlogController as ctrl">
+    
+
+        <div class="row">
+ 
+            <div class="col-lg-8" >
+<div ng-repeat="blog in ctrl.blogs| filter: search_text">
+                <!-- Blog Post -->
+
+                <!-- Title -->
+                <h1>{{blog.title}}</h1>
+
+                <!-- Author -->
+                <p class="lead">
+                    by <a href="#">{{blog.userid}}</a>
+                </p>
+
+                <hr>
+
+                <!-- Date/Time -->
+                <p><span class="glyphicon glyphicon-time"></span> Posted on {{blog.posted_dt}} at 9:00 PM</p>
+
+                <hr>
+
+                <!-- Preview Image -->
+                <img class="img-responsive" src="http://placehold.it/900x300" alt="Image">
+
+                <hr>
+
+                <!-- Post Content -->
+                <p>{{blog.description}}</p>
+<hr>
+  </div>              
+</div><div class="col-md-4">
+
+                <!-- Blog Search Well -->
+                <div class="well">
+                    <h4>Blog Search</h4>
+                    <div class="input-group">
+                        <input type="text" class="form-control" ng-model="search_text">
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" type="button">
+                                <span class="glyphicon glyphicon-search"></span>
+                        </button>
+                        </span>
+                    </div>
+                    <!-- /.input-group -->
+                </div>
+                </div>
+  </div>
+  </div>
+                
+</body>
+</html>

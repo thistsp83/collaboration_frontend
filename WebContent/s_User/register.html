@@ -1,0 +1,162 @@
+<html>
+<head>
+<title>Register</title>
+ <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<style>
+/* Credit to bootsnipp.com for the css for the color graph */
+.colorgraph {
+  height: 5px;
+  border-top: 0;
+ background: #c4e17f;
+  border-radius: 5px;
+  
+background-image: -webkit-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+
+background-image: -moz-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+
+background-image: -o-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+
+background-image: linear-gradient(to right, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+}
+</style>
+</head>
+<body>
+<div class="generic-container" ng-controller="UserController as ctrl">
+<div ng-hide='ctrl.user.errorMessage=="" '>
+			<div class="alert alert-danger fade in">Error :
+				{{ctrl.user.errorMessage}}</div>
+
+		</div>
+
+
+		<div ng-show='ctrl.user.errorMessage=="" '>
+<div class="container">
+
+<div class="row">
+    <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
+		
+<form ng-submit="ctrl.submit()" name="myForm" class="form-horizontal" role="form">
+			<h2>Please Sign Up <small>It's free and always will be.</small></h2>
+			
+<hr class="colorgraph">
+	
+<div class="form-group">
+<h5>Register As:</h5>
+							<div class="radio">
+								<label class="radio-inline"> <input type="radio"
+									name="role" value="student" ng-model="ctrl.user.role">
+									Student
+								</label> <label class="radio-inline"> <input type="radio"
+									name="role" value="alumni" ng-model="ctrl.user.role">
+									Alumni
+								</label> <label class="radio-inline"> <input type="radio"
+									name="role" value="employee" ng-model="ctrl.user.role">
+									Employee
+								</label>
+							</div>						
+<div class="form-group">
+
+<input type="text" name="userid" id="userid" ng-model="ctrl.user.userid" class="form-control input-lg" placeholder="Userid" tabindex="4">
+			
+</div>
+
+</div>
+	
+<div class="form-group">
+
+<input type="text" name="username" id="username" ng-model="ctrl.user.username" class="form-control input-lg" placeholder="Username" tabindex="3">
+			
+</div>
+
+<div class="form-group">
+<input type="email" name="email" id="email" ng-model="ctrl.user.email" class="form-control input-lg" placeholder="Email" tabindex="4">
+
+</div>
+
+<div class="form-group">
+
+<input type="text" name="address" id="address" ng-model="ctrl.user.address" class="form-control input-lg" placeholder="Address" tabindex="4">
+
+</div>
+
+<div class="row">
+
+<div class="col-xs-12 col-sm-6 col-md-6">
+
+<div class="form-group">
+
+<input type="password" name="password" id="password" ng-model="ctrl.user.password" class="form-control input-lg" pattern=".{5,20}" title="Password should contain minimum 5 letters" placeholder="Password" tabindex="5">
+	
+</div>
+
+</div>
+
+<div class="col-xs-12 col-sm-6 col-md-6">
+					
+<div class="form-group">
+
+<input type="number" name="mobile" id="mobile" ng-model="ctrl.user.mobile" class="form-control input-lg" placeholder="Mobile Number" pattern="[789][0-9]{9}" tabindex="6">
+
+</div>
+
+</div>
+
+</div>
+
+<div class="row">
+
+<div class="col-xs-4 col-sm-3 col-md-3">
+
+<span class="button-checkbox">
+
+<button type="button" class="btn" data-color="info" tabindex="7">I Agree</button>
+ 
+<input type="checkbox" name="t_and_c" id="t_and_c" class="hidden" value="1">
+
+</span>
+				</div>
+				
+<div class="col-xs-8 col-sm-9 col-md-9">
+ By clicking <strong class="label label-primary">Register</strong>, you agree to the <a href="#" data-toggle="modal" data-target="#t_and_c_m">Terms and Conditions</a> set out by this site, including our Cookie Use.
+				
+</div>
+
+</div>
+	
+<hr class="colorgraph">
+	
+<div class="row">
+
+<div class="col-xs-12 col-md-6"><input type="submit" value="Register" class="btn btn-primary btn-block btn-lg" tabindex="7"></div>
+
+<div class="col-xs-12 col-md-6"><a href="#/login" class="btn btn-success btn-block btn-lg">Sign In</a></div>
+	
+</div>
+	</form>
+	</div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="t_and_c_m" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog modal-lg">
+
+<div class="modal-content">
+
+<div class="modal-header">
+
+<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+
+<h4 class="modal-title" id="myModalLabel">Terms & Conditions</h4>
+</div>
+</div><!-- /.modal-content -->
+	</div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+</div>
+</div>
+</div>
+</body>
+</html>

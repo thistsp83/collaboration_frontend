@@ -1,0 +1,43 @@
+<div class="container" ng-controller="FriendController as ctrl">
+
+	<p>
+	<p>
+	<p>
+	<p>
+	
+	<p>
+	<p>
+	<p>
+	<p>
+	
+	<div class="form-group has-feedback"></div>
+
+  Search
+
+  <p><input type="text" ng-model="sear_text"></p>
+
+
+	<div ng-repeat="user in ctrl.users | filter: sear_text">
+	
+	
+	
+
+		<fieldset>
+			<legend></legend>
+			
+			<p>Online ?: {{user.isOnline}}  
+
+			<p>UserID: {{user.userid}} &nbsp; &nbsp;&nbsp; UserName: {{user.username}}
+			    &nbsp; &nbsp;&nbsp;  <button type="button"  ng-click="ctrl.sendFriendRequest(user.username)" 
+			       class="btn btn-success">Send Friend Request</button>
+			  </p>
+
+			<p>Email: {{user.email}} &nbsp; &nbsp;&nbsp; Mobile:{{user.mobile}}</p>
+
+			<p> Address:{{user.address}} &nbsp; &nbsp;&nbsp; Role :{{user.role}}</p>
+		</fieldset>
+		<hr>
+	</div>
+
+
+</div>

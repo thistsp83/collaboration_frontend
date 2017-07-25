@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  
+  <meta charset="ISO-8859-1">
+<title>Create Blog</title>
+<style>
+.align{
+margin-left:300px;
+}
+</style>
+</head>
+<body>
+
+
+	<div class="generic-container" ng-controller="BlogController as ctrl">
+
+
+		<!-- <div ng-hide='ctrl.Userdetails.errorMessage=="" '>
+			<div class="alert alert-danger fade in">Error :
+				{{ctrl.Userdetails.errorMessage}}</div>
+
+		</div>
+
+ -->
+	<!-- 	<div ng-show='ctrl.Userdetails.errorMessage=="" '> -->
+
+			<div class="panel panel-default">
+				<div class="panel-heading">
+				<div style="text-align:center">
+					<span class="lead">Create Your Blog Here</span>
+			    </div>
+				</div>
+				<div class="formcontainer">
+				<div class="align">
+					<form ng-submit="ctrl.submit()" name="myForm"
+						class="form-horizontal">
+
+						
+						<div class="row">
+							<div class="form-group col-md-12">
+								<label class="col-md-2 control-lable" for="title">Blog Title</label>
+								<div class="col-md-7">
+									<input type="text" ng-model="ctrl.Blog.title"
+										id="password" class="username form-control input-sm"
+										placeholder="Title of your blog" required ng-minlength="3" />
+								</div>
+							</div>
+						</div>
+
+
+						<div class="row">
+							<div class="form-group col-md-12">
+								<label class="col-md-2 control-lable" for="description">Blog Description</label>
+								<div class="col-md-7">
+									<textarea ng-model="ctrl.Blog.description" id="description"
+										class="form-control input-sm"
+										placeholder="Write your description" required style="height:200px;" />
+
+								</div>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="form-group col-md-12">
+								<label class="col-md-2 control-lable" for="reason">Reason for Creating this Blog</label>
+								<div class="col-md-7">
+									<input type="text" ng-model="ctrl.Blog.reason" id="reason"
+										class="form-control input-sm"
+										placeholder="Reason for creating the blog" required />
+
+								</div>
+							</div>
+						</div>
+
+
+						
+					<div style="text-align:center">
+						<input type="submit" value="CreateBlog"	class="btn btn-success">
+				   </div>
+					</form>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+
+
+</body>
+
+
+</html>
